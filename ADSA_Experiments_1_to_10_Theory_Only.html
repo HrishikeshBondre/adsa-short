@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADSA Experiments 1–10 — Short Theory</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+header{background:#172554;color:white;text-align:center;padding:25px 15px}header h1{margin:0 0 5px;font-size:clamp(23px,4vw,32px)}header p{margin:0;color:#dbeafe}
+nav{position:sticky;top:0;background:white;border-bottom:1px solid #dbe3ef;padding:9px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;z-index:5}nav a{font-size:13px;text-decoration:none;color:#3156a3;font-weight:bold;padding:5px 8px;border-radius:5px}nav a:hover{background:#eaf0ff}
+main{max-width:900px;margin:22px auto;padding:0 14px}.experiment{background:white;border:1px solid #dbe3ef;border-radius:10px;margin-bottom:14px;padding:17px 20px;scroll-margin-top:75px}.head{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}.badge{background:#e8efff;color:#23458f;font-size:12px;font-weight:bold;padding:5px 8px;border-radius:6px;white-space:nowrap;margin-top:2px}.head h2{font-size:18px;line-height:1.35;margin:0}.experiment p{margin:8px 0;color:#374151}.experiment ul{margin:7px 0 10px;padding-left:22px}.experiment li{margin:4px 0}.complexity{font-size:13px;color:#64748b!important;border-top:1px solid #e5eaf2;padding-top:9px}
+footer{text-align:center;color:#64748b;padding:15px;font-size:13px}
+@media(max-width:600px){.experiment{padding:14px}.head h2{font-size:16px}}
+@media print{body{background:white}nav{display:none}header{background:#172554!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}main{max-width:none;margin:0;padding:0}.experiment{break-inside:avoid-page;margin-bottom:8px;padding:12px;border:1px solid #bbb}.head h2{font-size:15px}}
+</style></head><body>
+<header><h1>ADSA Practical Theory</h1><p>Experiments 1–10 · Short, important points only · No code</p></header>
+<nav><a href="#exp1">Exp 1</a><a href="#exp2">Exp 2</a><a href="#exp3">Exp 3</a><a href="#exp4">Exp 4</a><a href="#exp5">Exp 5</a><a href="#exp6">Exp 6</a><a href="#exp7">Exp 7</a><a href="#exp8">Exp 8</a><a href="#exp9">Exp 9</a><a href="#exp10">Exp 10</a></nav><main>
+<section class="experiment" id="exp1">
+  <div class="head"><span class="badge">EXP 01</span><h2>Construct a Binary Search Tree and Perform Preorder, Inorder and Postorder Traversals</h2></div>
+  <p>A Binary Search Tree (BST) stores smaller values in the left subtree and larger values in the right subtree. Traversals visit each node in a specific order:</p>
+  <ul><li>Inorder: Left → Root → Right; produces values in sorted order.</li><li>Preorder: Root → Left → Right.</li><li>Postorder: Left → Right → Root.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Time: O(n) for each traversal, where n is the number of nodes.</p>
+</section>
+<section class="experiment" id="exp2">
+  <div class="head"><span class="badge">EXP 02</span><h2>Implement Insert, Delete, Search and Display Operations on a Binary Search Tree</h2></div>
+  <p>A BST supports efficient data operations by comparing each value with the current node and moving left or right.</p>
+  <ul><li>Insert: Adds a new value in its correct position.</li><li>Search: Checks whether a value exists.</li><li>Delete: Removes a node while preserving the BST property.</li><li>Display: Inorder traversal displays values in sorted order.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Average operation time: O(log n); worst case: O(n) for an unbalanced tree.</p>
+</section>
+<section class="experiment" id="exp3">
+  <div class="head"><span class="badge">EXP 03</span><h2>Implement Prim’s and Kruskal’s Algorithms</h2></div>
+  <p>Prim’s and Kruskal’s algorithms find a Minimum Spanning Tree (MST), which connects all vertices of a connected, weighted graph with minimum total edge weight and no cycles.</p>
+  <ul><li>Prim’s algorithm: Starts from one vertex and repeatedly adds the lowest-weight edge connecting the tree to an unvisited vertex.</li><li>Kruskal’s algorithm: Sorts edges by weight and adds the next lowest edge if it does not create a cycle.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Prim’s (adjacency matrix): O(V²). Kruskal’s: O(E log E).</p>
+</section>
+<section class="experiment" id="exp4">
+  <div class="head"><span class="badge">EXP 04</span><h2>Implement 0-1 Knapsack Using Dynamic Programming</h2></div>
+  <p>The 0-1 Knapsack problem selects items with given weights and values to maximize total value without exceeding the capacity. Each item can be selected only once or not selected.</p>
+  <ul><li>Dynamic programming stores the best value for each item count and capacity.</li><li>For each item, compare excluding it with including it when it fits.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Time and space: O(nW), where n is the number of items and W is the capacity.</p>
+</section>
+<section class="experiment" id="exp5">
+  <div class="head"><span class="badge">EXP 05</span><h2>Solve the N-Queens Problem Using Backtracking</h2></div>
+  <p>The N-Queens problem places N queens on an N × N chessboard so that no two queens attack each other.</p>
+  <ul><li>Place one queen in each row.</li><li>Check that its column and both diagonals are free.</li><li>If no safe position is available, backtrack and move the previous queen.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Backtracking tests possible placements and abandons invalid arrangements.</p>
+</section>
+<section class="experiment" id="exp6">
+  <div class="head"><span class="badge">EXP 06</span><h2>Find the Sum of Subsets Using Backtracking</h2></div>
+  <p>The Sum of Subsets problem finds subsets of a given set whose elements add up to a target value.</p>
+  <ul><li>For each number, explore two choices: include it or exclude it.</li><li>When the sum equals the target, record the subset.</li><li>Stop exploring a path when it cannot produce a valid target (for example, when the sum exceeds the target for positive numbers).</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Worst-case time: O(2ⁿ), because each of n numbers has two choices.</p>
+</section>
+<section class="experiment" id="exp7">
+  <div class="head"><span class="badge">EXP 07</span><h2>Implement the Floyd–Warshall Algorithm</h2></div>
+  <p>Floyd–Warshall finds the shortest paths between every pair of vertices in a weighted graph.</p>
+  <ul><li>Start with the graph’s distance matrix.</li><li>Consider each vertex as an intermediate point and update distance[i][j] if distance[i][k] + distance[k][j] is smaller.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Time: O(V³). Space: O(V²).</p>
+</section>
+<section class="experiment" id="exp8">
+  <div class="head"><span class="badge">EXP 08</span><h2>Implement the Bellman–Ford Algorithm</h2></div>
+  <p>Bellman–Ford finds shortest distances from one source vertex to all other vertices. It supports negative edge weights.</p>
+  <ul><li>Relax every edge V − 1 times, updating a distance when a shorter path is found.</li><li>Check all edges once more; if a distance can still decrease, a reachable negative-weight cycle exists.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Time: O(VE). Space: O(V).</p>
+</section>
+<section class="experiment" id="exp9">
+  <div class="head"><span class="badge">EXP 09</span><h2>Implement the Naïve String Matching Algorithm</h2></div>
+  <p>Naïve string matching searches for a pattern by comparing it with every possible substring of the text having the same length.</p>
+  <ul><li>Shift the pattern one position at a time.</li><li>Compare characters; record the starting index whenever all pattern characters match.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Worst-case time: O(nm), where n is text length and m is pattern length.</p>
+</section>
+<section class="experiment" id="exp10">
+  <div class="head"><span class="badge">EXP 10</span><h2>Find the Longest Common Subsequence (LCS)</h2></div>
+  <p>The Longest Common Subsequence is the longest sequence that appears in two strings in the same relative order; characters do not need to be consecutive.</p>
+  <ul><li>Use a dynamic-programming table for prefixes of both strings.</li><li>If characters match, add 1 to the diagonal value; otherwise take the maximum of the top and left values.</li></ul>
+  <p class="complexity"><strong>Important complexity / note:</strong> Time: O(mn). Space: O(mn), where m and n are the string lengths.</p>
+</section></main>
+<footer>ADSA · Short theory revision notes</footer></body></html>
